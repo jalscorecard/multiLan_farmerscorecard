@@ -12,7 +12,7 @@ const upload = multer();
 const port = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: [process.env.FRONTEND_URL || "http://localhost:5174"],
+  origin: [process.env.FRONTEND_URL || "https://multilan-farmerscorecard-frontend.onrender.com"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "Accept"],
   credentials: true,
