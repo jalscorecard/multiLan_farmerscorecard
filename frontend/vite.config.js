@@ -2,17 +2,16 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/multiLan_farmerscorecard/',
   plugins: [react()],
-  server: {
+    server: {
     proxy: {
       '/api': {
-        target: 'https://multilan-farmerscorecard.onrender.com',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
-      },
-    },
+      }
+    }
   },
 
   optimizeDeps: {
@@ -21,7 +20,7 @@ export default defineConfig({
       mainFields: ['module', 'main'],
     },
   },
-
+  
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
