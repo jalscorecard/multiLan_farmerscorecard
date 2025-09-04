@@ -6,7 +6,7 @@ export default defineConfig({
     server: {
     proxy: {
       '/api': {
-        target: 'https://multilan-farmerscorecard.onrender.com',
+        target: '/multiLan_farmerscorecard/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
